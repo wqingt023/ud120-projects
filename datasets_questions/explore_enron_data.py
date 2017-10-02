@@ -19,4 +19,12 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+print '数据点（人）数：', len(enron_data)
+print '特征数：', len(enron_data[enron_data.keys()[0]])
+print '特征数：', len(enron_data['METTS MARK'])
 
+poi_num = 0
+for key in enron_data:
+    if enron_data.get(key)['poi'] == 1:
+        poi_num = poi_num + 1
+print 'POI数：', poi_num
